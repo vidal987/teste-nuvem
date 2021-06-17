@@ -2128,11 +2128,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Vidal\\Documents\\dev\\Nuvem3\\Nuvem3\\Nuvem3.csproj",
+      "projectUniqueName": "C:\\Users\\Vidal\\Documents\\dev\\teste\\Nuvem3\\Nuvem3\\Nuvem3.csproj",
       "projectName": "Nuvem3",
-      "projectPath": "C:\\Users\\Vidal\\Documents\\dev\\Nuvem3\\Nuvem3\\Nuvem3.csproj",
+      "projectPath": "C:\\Users\\Vidal\\Documents\\dev\\teste\\Nuvem3\\Nuvem3\\Nuvem3.csproj",
       "packagesPath": "C:\\Users\\Vidal\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Vidal\\Documents\\dev\\Nuvem3\\Nuvem3\\obj\\",
+      "outputPath": "C:\\Users\\Vidal\\Documents\\dev\\teste\\Nuvem3\\Nuvem3\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\Vidal\\AppData\\Roaming\\NuGet\\NuGet.Config",

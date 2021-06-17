@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "Pn9jw9Vr//o4TEAcYKk3NSB6y4pkX1Q26mnPgJH5VrPuVc7WIiPVX+1Kd6bQD+z6lXVFE6GxtUdRZqxG62RCKA==",
+  "dgSpecHash": "CekJqhy7/6L+hyp1LYk6lkJ+kfqsPglv5m/3Yk8T5uJNyfFUVKMDH07/RYrmwdSGdd3oa0GmaBdCxpdVwDFB9g==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Vidal\\Documents\\dev\\Nuvem3\\Nuvem3\\Nuvem3.csproj",
+  "projectFilePath": "C:\\Users\\Vidal\\Documents\\dev\\teste\\Nuvem3\\Nuvem3\\Nuvem3.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Vidal\\.nuget\\packages\\bouncycastle.netcore\\1.8.5\\bouncycastle.netcore.1.8.5.nupkg.sha512",
     "C:\\Users\\Vidal\\.nuget\\packages\\google.protobuf\\3.14.0\\google.protobuf.3.14.0.nupkg.sha512",

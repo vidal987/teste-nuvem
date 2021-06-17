@@ -1,27 +1,15 @@
 import { NgModule } from '@angular/core';
-import { RouterModule, Routes } from '@angular/router';
+import { Routes, RouterModule } from '@angular/router'; // CLI imports router
+import { ListagemComponent } from './listagem/listagem.component';
+import { CadastroComponent} from './cadastro/cadastro.component'
 
 const routes: Routes = [
-  {
-    path: '', // Quando alguem entrar no site: http://localhost:4200/  vai ser redirecionado para http://localhost:4200/employees
-    redirectTo: '/client',
-    pathMatch: 'full'
-  },
-  {
-    path: 'client',
-    loadChildren: () => import('./views/employee-list/client-list.module').then((m) => m.clientListModule)
-  },
-  {
-    path: 'client',
-    loadChildren: () => import('./views/client-form/client-form.module').then((m) => m.clientFormModule)
-  },
-  {
-    path: 'client/:id',
-    loadChildren: () => import('./views/client-form/client-form.module').then((m) => m.clientFormModule)
-  },
+  { path: '',   redirectTo: '/listagem', pathMatch: 'full' },
+  { path: 'listagem', component: ListagemComponent },
+  { path: 'cadastro', component: CadastroComponent }
+]; // sets up routes constant where you define your routes
 
-];
-
+// configures NgModule imports and exports
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule]

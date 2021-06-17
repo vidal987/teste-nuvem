@@ -1,25 +1,23 @@
-<ng2-slim-loading-bar color="purple" height="10px" progress="10"></ng2-slim-loading-bar>
 
-
-<nav class="navbar navbar-expand-sm" bg-light>
-    <div class="container-fluid">
-    <ul class="navbar-nav">
-      <li class="nav-item">
-        <a [routerLink]="['/client']" class="nav-link" routerLinkActive="active"
-          [routerLinkActiveOptions]="{exact: true}">
-          crie novo Cliente
-        </a>
-      </li>
-      <li class="nav-item">
-        <a [routerLink]="['/client']" class="nav-link" routerLinkActive="active"
-          [routerLinkActiveOptions]="{exact: true}">
-          Clientes
-        </a>
-      </li>
-    </ul>
+<nav class="navbar navbar-expand-lg navbar navbar-dark bg-dark">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#">Nuvem3</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <a routerLink="/listagem" routerLinkActive="active" class="nav-link active" aria-current="page" href="#">Lista de Clientes</a>
+        </li>
+        <li class="nav-item">
+          <a routerLink="/Cadastrar" routerLinkActive="active" class="nav-link" href="#">Cadastro de Cliente</a>
+        </li>
+      </ul>
+    </div>
   </div>
 </nav>
 
-<div class="container">
-  <router-outlet></router-outlet>
-</div>
+
+<!-- The routed views render in the <router-outlet>-->
+<router-outlet></router-outlet>
