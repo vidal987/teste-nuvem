@@ -8,12 +8,10 @@ using System.Threading.Tasks;
 namespace Nuvem3.Context
 {
     public class DataContext : DbContext
-    {
-        public DataContext(DbContextOptions<DataContext> options)
-            : base(options)
+    {                                                              
+        public DataContext(DbContextOptions<DataContext> options) : base(options)
         { }
 
-        public DataContext() { }
 
         public DbSet<Client> Clients { get; set; }
     }

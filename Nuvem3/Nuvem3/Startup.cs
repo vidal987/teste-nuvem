@@ -23,11 +23,15 @@ namespace Nuvem3
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddCors();
-            
+
+
+            string mySqlConnectionStr = Configuration.GetConnectionString("DefaultConnection");
+            services.AddDbContextPool<DataContext>(options => options.UseMySql(mySqlConnectionStr, ServerVersion.AutoDetect(mySqlConnectionStr)));
+
             //TODO: APENAS VOLTAR AO PROVIDER DO MYSQL 
-             services.AddDbContext<DataContext>(options =>
-            options.UseSqlite(
-                Configuration.GetConnectionString("data")));
+            // services.AddDbContext<DataContext>(options =>
+            //options.UseMySql(
+            //    Configuration.GetConnectionString("DefaultConnection")));
 
             services.AddControllers();
             services.AddSwaggerGen(c =>

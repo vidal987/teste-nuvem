@@ -57,7 +57,6 @@ namespace Nuvem3.Controllers
 
             }
 
-
             if (shouldFilterByName)
             {
                 result = _context.Clients.Where(c => c.Name.Contains(name));

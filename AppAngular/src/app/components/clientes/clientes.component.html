@@ -1,7 +1,7 @@
 <div class="container p-5" *ngIf="visibilidadeTabela">
   <div class="border boder-light rounded p-5">
     <div>
-      <button type="button" class="btn btn-sm btn-secondary" (click)="ExibirFormularioCadastro()">
+      <button type="button" class="btn btn-sm btn-secondary mb-3" (click)="ExibirFormularioCadastro()">
         Nova Pessoa
       </button>
 
@@ -20,10 +20,10 @@
         <td>{{ client.name }}</td>
         <td>{{ client.type }}</td>
         <td>
-          <button type="button" class="btn btn-sm btn-outline-info" (click)="ExibirFormularioAtualizacao(client.id)">
+          <button type="button" class="btn btn-sm btn-outline-info ml-3 mr-3" (click)="ExibirFormularioAtualizacao(client.id)">
             Atualizar</button
           >|
-          <button type="button" class="btn btn-sm btn-outline-danger" (click)="ExibirConfirmacaoExclusao(client.id, client.name, conteudoModal)">
+          <button type="button" class="btn btn-sm btn-outline-danger ml-3 mr-3" (click)="ExibirConfirmacaoExclusao(client.id, client.name, conteudoModal)">
             Excluir
           </button>
         </td>
@@ -55,6 +55,24 @@
             class="form-control form-control-sm"
             formControlName="type"
           />
+        </div>
+
+        <div class="form-group">
+          <label>Email</label>
+          <input
+            type="text"
+            class="form-control form-control-sm"
+            formControlName="email"
+          />
+
+          <div class="form-group">
+            <label>telefone</label>
+            <input
+              type="text"
+              class="form-control form-control-sm"
+              formControlName="telefone"
+            />
+          </div>
         </div>
 
         <div class="container">

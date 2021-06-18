@@ -43,7 +43,9 @@ export class ClienteComponent implements OnInit {
     this.tituloFormulario = 'Novo Cliente';
     this.formulario = new FormGroup({
       name: new FormControl(null),
-      type: new FormControl(null)
+      type: new FormControl(null),
+      email: new FormControl(null),
+      telefone: new FormControl(null)
     });
   }
 
@@ -59,6 +61,8 @@ export class ClienteComponent implements OnInit {
       this.formulario = new FormGroup({
         name: new FormControl(data.name),
         type: new FormControl(data.type),
+        email: new FormControl(data.email),
+        telefone: new FormControl(data.telefone)
       });
     });
   }
