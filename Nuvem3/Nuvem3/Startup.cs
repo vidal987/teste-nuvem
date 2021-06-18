@@ -22,6 +22,8 @@ namespace Nuvem3
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddCors();
+            
             //TODO: APENAS VOLTAR AO PROVIDER DO MYSQL 
              services.AddDbContext<DataContext>(options =>
             options.UseSqlite(
@@ -45,6 +47,12 @@ namespace Nuvem3
             }
 
             app.UseHttpsRedirection();
+
+            app.UseCors(options => options
+                                        .AllowAnyOrigin()
+                                        .AllowAnyMethod()
+                                        .AllowAnyHeader());
+                                        
 
             app.UseRouting();
 
