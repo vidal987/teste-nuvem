@@ -21,10 +21,10 @@
         <td>{{ client.name }}</td>
         <td>{{ client.type }}</td>
         <td>
-          <button type="button" class="btn btn-sm btn-outline-info" (click)="ExibirFormularioAtualizacao(cliente.id)">
+          <button type="button" class="btn btn-sm btn-outline-info" (click)="ExibirFormularioAtualizacao(client.id)">
             Atualizar</button
           >|
-          <button type="button" class="btn btn-sm btn-outline-danger" (click)="ExibirConfirmacaoExclusao(cliente.id, cliente.name, conteudoModal)">
+          <button type="button" class="btn btn-sm btn-outline-danger" (click)="ExibirConfirmacaoExclusao(client.id, client.name, conteudoModal)">
             Excluir
           </button>
         </td>
@@ -45,7 +45,7 @@
           <input
             type="text"
             class="form-control form-control-sm"
-            formControlName="nome"
+            formControlName="name"
           />
         </div>
 
@@ -54,7 +54,7 @@
           <input
             type="text"
             class="form-control form-control-sm"
-            formControlName="tipo"
+            formControlName="type"
           />
         </div>
 
@@ -88,6 +88,6 @@
 
     <div class="modal-footer">
         <button type="button" class="btn btn-light" (click)="modalRef.hide()">Não</button>
-        <button type="button" class="btn btn-outline-danger" (click)="ExcluirPessoa(id)">Sim</button>
+        <button type="button" class="btn btn-outline-danger" (click)="ExcluirCliente(id)">Sim</button>
     </div>
   </ng-template>

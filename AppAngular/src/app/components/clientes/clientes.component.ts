@@ -14,8 +14,8 @@ export class ClienteComponent implements OnInit {
   formulario: any;
   tituloFormulario: string;
   cliente: Cliente[];
-  nomePessoa: string;
-  pessoaId: number;
+  name: string;
+  id: number;
 
   visibilidadeTabela: boolean = true;
   visibilidadeFormulario: boolean = false;
@@ -40,7 +40,7 @@ export class ClienteComponent implements OnInit {
   ExibirFormularioCadastro(): void {
     this.visibilidadeTabela = false;
     this.visibilidadeFormulario = true;
-    this.tituloFormulario = 'Nova Pessoa';
+    this.tituloFormulario = 'Novo Cliente';
     this.formulario = new FormGroup({
       name: new FormControl(null),
       type: new FormControl(null)
@@ -51,12 +51,12 @@ export class ClienteComponent implements OnInit {
     this.visibilidadeTabela = false;
     this.visibilidadeFormulario = true;
 
-    this.clienteService.GetById(id).subscribe((resultado) => {
-      this.tituloFormulario = `Atualizar ${resultado.name} ${resultado.type}`;
+    this.clienteService.GetById(id).subscribe((data) => {
+      this.tituloFormulario = `Atualizar ${data.name} ${data.type}`;
 
       this.formulario = new FormGroup({
-        name: new FormControl(resultado.name),
-        type: new FormControl(resultado.type),
+        name: new FormControl(data.name),
+        type: new FormControl(data.type),
       });
     });
   }
@@ -68,16 +68,16 @@ export class ClienteComponent implements OnInit {
       this.clienteService.UpdateClient(cliente).subscribe((data) => {
         this.visibilidadeFormulario = false;
         this.visibilidadeTabela = true;
-        alert('Pessoa atualizada com sucesso');
-        this.clienteService.All().subscribe((registros) => {
-          this.cliente = registros;
+        alert('Cliente atualizado com sucesso');
+        this.clienteService.All().subscribe((data) => {
+          this.cliente = data;
         });
       });
     } else {
       this.clienteService.CreatedClient(cliente).subscribe((resultado) => {
         this.visibilidadeFormulario = false;
         this.visibilidadeTabela = true;
-        alert('Pessoa inserida com sucesso');
+        alert('Cliente inserida com sucesso');
         this.clienteService.All().subscribe((registros) => {
           this.cliente = registros;
         });
@@ -90,17 +90,17 @@ export class ClienteComponent implements OnInit {
     this.visibilidadeFormulario = false;
   }
 
-  ExibirConfirmacaoExclusao(id, nome, conteudoModal: TemplateRef<any>): void {
+  ExibirConfirmacaoExclusao(id, name, conteudoModal: TemplateRef<any>): void {
     this.modalRef = this.modalService.show(conteudoModal);
-    this.pessoaId = id;
-    this.nomePessoa = nome;
+    this.id = id;
+    this.name = name;
   }
 
 
     ExcluirCliente(id: number): void{
     this.clienteService.DeleteClient(id).subscribe(data => {
       this.modalRef.hide();
-      alert('Pessoa excluída com sucesso');
+      alert('Cliente excluída com sucesso');
       this.clienteService.All().subscribe(registros => {
         this.cliente = registros;
       });
