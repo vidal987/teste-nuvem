@@ -28,6 +28,18 @@ namespace Nuvem3.Controllers
             return await _context.Clients.ToListAsync();
         }
 
+        [HttpGet("{id}")]
+        public async Task<ActionResult<Client>> GetById(int id)
+        {
+            var cliente =  await _context.Clients.FindAsync(id);
+
+            if(cliente == null ){
+                return NotFound();
+            }
+
+            return cliente;
+        }
+
 
         [HttpGet("filter")]
         public IActionResult Filter(string name, string type)

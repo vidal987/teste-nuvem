@@ -3,7 +3,9 @@ import { Component, OnInit, TemplateRef } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
 import { Cliente } from 'src/app/Cliente';
 import { BsModalRef, BsModalService } from 'ngx-bootstrap/modal';
-import Swal from 'sweetalert2';
+import { ActivatedRoute } from '@angular/router';
+
+
 
 @Component({
   selector: 'app-clientes',
@@ -23,7 +25,7 @@ export class ClienteComponent implements OnInit {
   modalRef: BsModalRef;
 
   constructor(private clienteService: ClienteService,
-    private modalService: BsModalService) {}
+    private modalService: BsModalService, private route: ActivatedRoute) {}
 
   ngOnInit(): void {
     this.All();
@@ -32,8 +34,6 @@ export class ClienteComponent implements OnInit {
   All(){
     this.clienteService.All().subscribe((data: Cliente[]) =>{
       this.cliente = data;
-      console.log(data);
-
     })
   }
 
@@ -53,6 +53,8 @@ export class ClienteComponent implements OnInit {
 
     this.clienteService.GetById(id).subscribe((data) => {
       this.tituloFormulario = `Atualizar ${data.name} ${data.type}`;
+      console.log(data)
+
 
       this.formulario = new FormGroup({
         name: new FormControl(data.name),
@@ -65,19 +67,19 @@ export class ClienteComponent implements OnInit {
     const cliente: Cliente = this.formulario.value;
 
     if (cliente.id > 0) {
-      this.clienteService.UpdateClient(cliente).subscribe((data) => {
+      this.clienteService.UpdateClient(this.id).subscribe((data) => {
         this.visibilidadeFormulario = false;
         this.visibilidadeTabela = true;
-        alert('Cliente atualizado com sucesso');
-        this.clienteService.All().subscribe((data) => {
-          this.cliente = data;
+        alert('Cliente atualizada com sucesso');
+        this.clienteService.All().subscribe((registros) => {
+          this.cliente = registros;
         });
       });
     } else {
       this.clienteService.CreatedClient(cliente).subscribe((resultado) => {
         this.visibilidadeFormulario = false;
         this.visibilidadeTabela = true;
-        alert('Cliente inserida com sucesso');
+        alert('Cliente inserido com sucesso');
         this.clienteService.All().subscribe((registros) => {
           this.cliente = registros;
         });
