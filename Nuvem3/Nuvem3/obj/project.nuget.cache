@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "n+5b/8DXrZ7+2zduapL+JveTaM36J7bykY+JmV/Zc1xPlJcW3g74Tz+s/VIIracgW58heKfhrpZXtSqjD7ycZw==",
+  "dgSpecHash": "rfoJb0qkR4Y6LjxszEA0tDJdbl8FN3fBMyJ4e8COhseWavqK4t5mnwAchU25nZtT627UC+5lQBsEuOYYXs5jUQ==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Vidal\\Documents\\dev\\teste\\Nuvem3\\Nuvem3\\Nuvem3.csproj",
+  "projectFilePath": "C:\\Users\\Vidal\\documents\\dev\\teste\\nuvem3\\nuvem3\\Nuvem3.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Vidal\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",
     "C:\\Users\\Vidal\\.nuget\\packages\\microsoft.csharp\\4.7.0\\microsoft.csharp.4.7.0.nupkg.sha512",

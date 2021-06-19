@@ -5,11 +5,11 @@ namespace Nuvem3.Models
 {
     public class Client : BaseEntity
     {
-        public Client(string type, int id, string name, string telefone) : base(id, name)
+        public Client(string type, int id, string name, string telefone, string email) : base(id, name)
         {
             Type = type;
             Email = email;
-            telefone = telefone;
+            telefone = Telefone;
         }
 
         public string Type { get; set; }

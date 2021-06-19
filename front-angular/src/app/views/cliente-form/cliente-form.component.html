@@ -1,0 +1,66 @@
+<div class="card">
+  <div class="card-body">
+    <form [formGroup]="clienteForm" novalidate (submit)="onSubmit()">
+
+      <div class="form-group">
+        <label class="font-weight-bold" for="name">Nome</label>
+        <input type="text" class="form-control" placeholder="Nome" formControlName="name" #name />
+      </div>
+      <div *ngIf="validatorInputs('name')" class="alert alert-danger">
+        <div *ngIf="validatorErrorsRequired('name')">
+          Nome requerido.
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label class="font-weight-bold" for="type">Tipo</label>
+        <select id="type" class="form-control" formControlName="type" #type>
+          <option value="bronze">bronze</option>
+          <option value="prata">prata</option>
+          <option value="ouro">ouro</option>
+        </select>
+
+      </div>
+      <div *ngIf="validatorInputs('type')" class="alert alert-danger">
+        <div *ngIf="validatorErrorsRequired('type')">
+          tipo requerido.
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label class="font-weight-bold" for="telefone">Telefone</label>
+        <input class="form-control" type="text" placeholder="Telefone" formControlName="telefone" #telefone />
+      </div>
+      <div *ngIf="validatorInputs('telefone')" class="alert alert-danger">
+        <div *ngIf="validatorErrorsRequired('telefone')">
+          telefone requerido.
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label class="font-weight-bold" for="email">Email</label>
+        <input class="form-control" type="text" placeholder="user@user.com" formControlName="email" #email />
+      </div>
+      <div *ngIf="validatorInputs('email')" class="alert alert-danger">
+        <div *ngIf="validatorErrorsRequired('email')">
+          email requerido.
+        </div>
+      </div>
+
+
+
+      <div class="form-group">
+        <button class="btn btn-primary" type="submit" [disabled]="clienteForm.pristine || clienteForm.invalid">
+          <ng-container *ngIf="!id">
+            <fa-icon [icon]="icons.faUserPlus"></fa-icon> Registrar cliente
+          </ng-container>
+
+
+          <ng-container *ngIf="id">
+            <fa-icon [icon]="icons.faUserEdit"></fa-icon> Editar Cliente
+          </ng-container>
+        </button>
+      </div>
+    </form>
+  </div>
+</div>
